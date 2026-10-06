@@ -1,0 +1,72 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  check:
+    name: 语法与结构检查 (Node ${{ matrix.node }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-latest, windows-latest ]
+        node: [ '18', '20', '22' ]
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Node.js ${{ matrix.node }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: 检查 CLI 脚本语法
+        run: node --check src/shotguard-verify.js
+
+      - name: 检查 package.json 合法性
+        run: node -e "const p=require('./package.json'); if(!p.name||!p.version) process.exit(1); console.log('package.json OK:', p.name, p.version)"
+
+      - name: 检查必需文件存在
+        shell: bash
+        run: |
+          for f in README.md LICENSE .gitignore .env.example index.html src/shotguard-verify.js docs/USAGE.md; do
+            if [ ! -f "$f" ]; then echo "缺少文件: $f"; exit 1; fi
+          done
+          echo "全部必需文件存在"
+
+      - name: 检查案例报告完整
+        shell: bash
+        run: |
+          for f in cases/case-a-naive-prompt.html cases/case-b-long-unstructured.html cases/case-c-structured-prompt.html; do
+            if [ ! -f "$f" ]; then echo "缺少案例: $f"; exit 1; fi
+            if ! grep -q "DOCTYPE html" "$f"; then echo "案例不是合法 HTML: $f"; exit 1; fi
+          done
+          echo "全部案例完整"
+
+      - name: 扫描是否泄漏密钥
+        shell: bash
+        run: |
+          # 排除占位符，只查真实密钥特征
+          if grep -rIn --exclude-dir=.git -E 'sk-[A-Za-z0-9]{20,}' . ; then
+            echo "::error::检测到疑似真实 API 密钥"
+            exit 1
+          fi
+          echo "未发现泄漏的密钥"
+
+      - name: 验证 CLI 可执行（无参数应打印用法）
+        shell: bash
+        run: |
+          output=$(node src/shotguard-verify.js 2>&1 || true)
+          if echo "$output" | grep -q "用法"; then
+            echo "CLI 可正常启动"
+          else
+            echo "::error::CLI 未输出用法提示"
+            echo "$output"
+            exit 1
+          fi
