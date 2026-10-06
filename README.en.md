@@ -159,7 +159,8 @@ This matches the [PersonaShot benchmark (arXiv:2608.16717)](https://arxiv.org/ab
 │   ├── case-b-long-unstructured.html
 │   └── case-c-structured-prompt.html
 └── docs/
-    └── USAGE.md                    # Detailed usage guide
+    ├── USAGE.md                    # Detailed usage guide
+    └── ARCHITECTURE.md             # Detection internals and design rationale
 ```
 
 ---
@@ -171,6 +172,10 @@ This matches the [PersonaShot benchmark (arXiv:2608.16717)](https://arxiv.org/ab
 - **Fault tolerance** — when the model returns nothing usable, the frame is marked "undecidable" rather than misjudged
 - **Rate limiting** — 429 exponential backoff (2s → 4s → 8s, max 3 retries) plus 1.5s spacing between frames
 - **Reporting** — JSON plus a self-contained HTML report (images inlined as base64, deliverable as one file)
+
+> For the full rationale — why "undecidable" is a first-class outcome, why there are zero
+> dependencies, and why audio detection is deliberately omitted — see
+> [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
 ---
 

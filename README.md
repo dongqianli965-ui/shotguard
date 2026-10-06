@@ -159,8 +159,12 @@ node ../src/shotguard-verify.js \
 │   ├── case-b-long-unstructured.html
 │   └── case-c-structured-prompt.html
 └── docs/
-    └── USAGE.md                    # 详细使用文档
+    ├── USAGE.md                    # 详细使用文档
+    └── ARCHITECTURE.md             # 检测原理与设计决策
 ```
+
+> 想了解**为什么这样设计**（为什么"无法判断"是一等结果、为什么零依赖、
+> 为什么不做音频检测）？见 [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)。
 
 ---
 

@@ -67,9 +67,45 @@ jobs:
       - name: 检查双语文档互链
         shell: bash
         run: |
-          if ! grep -q "README.en.md" README.md; then echo "中文 README 缺少英文版链接"; exit 1; fi
-          if ! grep -q "README.md" README.en.md; then echo "英文 README 缺少中文版链接"; exit 1; fi
+          fail=0
+          # README 互链
+          grep -q "README.en.md" README.md      || { echo "中文 README 缺少英文版链接"; fail=1; }
+          grep -q "README.md"    README.en.md   || { echo "英文 README 缺少中文版链接"; fail=1; }
+          # CONTRIBUTING 互链
+          grep -q "CONTRIBUTING.en.md" CONTRIBUTING.md    || { echo "中文 CONTRIBUTING 缺少英文版链接"; fail=1; }
+          grep -q "CONTRIBUTING.md"    CONTRIBUTING.en.md || { echo "英文 CONTRIBUTING 缺少中文版链接"; fail=1; }
+          [ $fail -eq 0 ] || exit 1
           echo "双语文档互链正常"
+
+      - name: 检查文档内部链接有效
+        shell: bash
+        run: |
+          fail=0
+          # README 中引用的本地路径必须真实存在
+          for doc in README.md README.en.md CONTRIBUTING.md CONTRIBUTING.en.md docs/ARCHITECTURE.md; do
+            # 提取 markdown 链接里的相对路径（排除 http/https/# 锚点）
+            grep -oE '\]\([^)#]+\.(md|js|html|png|mp4)\)' "$doc" 2>/dev/null | sed 's/](//; s/)$//' | while read -r link; do
+              # 相对当前文档所在目录解析
+              dir=$(dirname "$doc")
+              target="$dir/$link"
+              if [ ! -e "$target" ] && [ ! -e "$link" ]; then
+                echo "::error file=$doc::死链 $link"
+                echo "DEADLINK"
+              fi
+            done
+          done | tee /tmp/linkcheck.txt
+          if grep -q "DEADLINK" /tmp/linkcheck.txt; then
+            echo "::error::文档中存在死链"
+            exit 1
+          fi
+          echo "文档内部链接有效"
+
+      - name: 检查 ARCHITECTURE 已挂载到 README
+        shell: bash
+        run: |
+          grep -q "docs/ARCHITECTURE.md" README.md    || { echo "中文 README 未引用 ARCHITECTURE"; exit 1; }
+          grep -q "docs/ARCHITECTURE.md" README.en.md || { echo "英文 README 未引用 ARCHITECTURE"; exit 1; }
+          echo "ARCHITECTURE 已挂载到双语文档"
 
       - name: 扫描是否泄漏密钥
         shell: bash

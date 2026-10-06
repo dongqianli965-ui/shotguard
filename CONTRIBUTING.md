@@ -1,6 +1,10 @@
 # 贡献指南
 
+**中文** | [English](CONTRIBUTING.en.md)
+
 感谢你考虑为 SHOTGUARD 做贡献。
+
+> 想先了解检测原理？见 [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)。
 
 ## 这个项目最需要什么
 
