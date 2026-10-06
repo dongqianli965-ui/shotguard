@@ -1,0 +1,27 @@
+# 依赖
+node_modules/
+
+# 生成产物（每次运行都会重建）
+_frames/
+verify_report.json
+verify_report.html
+
+# 环境与密钥（切勿提交）
+.env
+.env.local
+*.key
+secrets.json
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 日志
+*.log
+npm-debug.log*
+
+# 临时文件
+*.tmp
+.chrome-*/

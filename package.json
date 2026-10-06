@@ -1,0 +1,43 @@
+{
+  "name": "shotguard",
+  "version": "1.0.0",
+  "description": "AI 视频自动验收工具 —— 检测生成视频的 8 类崩坏（身份/服装/道具/空间/光线/状态/动作/声音）",
+  "type": "commonjs",
+  "main": "src/shotguard-verify.js",
+  "bin": {
+    "shotguard": "src/shotguard-verify.js"
+  },
+  "scripts": {
+    "verify": "node src/shotguard-verify.js",
+    "check": "node --check src/shotguard-verify.js"
+  },
+  "keywords": [
+    "ai-video",
+    "video-generation",
+    "quality-assurance",
+    "character-consistency",
+    "acceptance-testing",
+    "seedance",
+    "kling",
+    "jimeng",
+    "runway"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "ffmpeg": ">=4.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lidongqian/shotguard.git"
+  },
+  "author": "lidongqian",
+  "os": [
+    "win32",
+    "darwin",
+    "linux"
+  ]
+}

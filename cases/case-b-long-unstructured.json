@@ -1,0 +1,155 @@
+{
+  "video": "lingjing-d780ae70bb494623b12c76ce8f1c9ee2-1.mp4",
+  "reference": "lingjing-5f239b1cc65f4e2c9e3748595d5009f6-1.png",
+  "character": "17岁少女，黑色长直发及肩，右侧银色发夹，米色针织开衫内搭白衬衫",
+  "scene": "木质地板，白色墙面，右侧一扇落地窗，窗下有灰色布艺沙发",
+  "frameCount": 6,
+  "validCount": 4,
+  "failCounts": {
+    "identity_drift": 4,
+    "clothing_drift": 3,
+    "prop_drift": 4,
+    "spatial_drift": 4,
+    "lighting_drift": 3,
+    "state_rollback": 0,
+    "action_break": 0
+  },
+  "pass": false,
+  "frames": [
+    {
+      "frame": "C:\\Users\\Administrator\\Desktop\\deepseek\\项目\\SHOTGUARD\\_frames\\frame_000.png",
+      "time": "0.72",
+      "index": 0,
+      "identity_drift": true,
+      "clothing_drift": false,
+      "prop_drift": true,
+      "spatial_drift": true,
+      "lighting_drift": true,
+      "state_rollback": false,
+      "action_break": false,
+      "issues": [
+        "身份漂移：参考图中的右侧银色发夹在第二张图中消失。",
+        "道具漂移：参考图中不存在的木门及门把手出现在第二张图中。",
+        "空间漂移：参考图设定的右侧落地窗及窗下沙发布局与第二张图的场景结构不符。",
+        "光线漂移：光源方向由参考图的正面均匀光变为第二张图的侧逆光（右侧窗户），阴影方向改变。"
+      ],
+      "detectedIssues": [
+        "身份漂移",
+        "道具漂移",
+        "空间漂移",
+        "光线漂移"
+      ]
+    },
+    {
+      "frame": "C:\\Users\\Administrator\\Desktop\\deepseek\\项目\\SHOTGUARD\\_frames\\frame_001.png",
+      "time": "1.44",
+      "index": 1,
+      "identity_drift": true,
+      "clothing_drift": true,
+      "prop_drift": true,
+      "spatial_drift": true,
+      "lighting_drift": true,
+      "state_rollback": false,
+      "action_break": false,
+      "issues": [
+        "身份漂移：第二张图中角色视角为侧脸，无法完全确认正面人脸一致性；银色发夹不可见，且发型长度（及肩 vs 过肩）存在视觉偏差",
+        "服装漂移：参考图为米色针织开衫内搭白衬衫，第二张图中角色穿着米色外衣，但无法看到内搭的白衬衫领口，且服装材质和款式细节不一致",
+        "道具漂移：参考图中的银色发夹在第二张图中缺失；第二张图还额外出现了参考图场景中未提及的门把手、绿植等元素",
+        "空间漂移：参考图设定为白色墙面、右侧落地窗、窗下灰色布艺沙发；第二张图中场景结构完全不同，包含多扇窗户、左侧沙发、右侧木门、茶几、电视柜等大量环境元素",
+        "光线漂移：参考图光线均匀柔和，第二张图光源方向明显来自右侧窗户，阴影方向与参考图不一致"
+      ],
+      "detectedIssues": [
+        "身份漂移",
+        "服装漂移",
+        "道具漂移",
+        "空间漂移",
+        "光线漂移"
+      ]
+    },
+    {
+      "frame": "C:\\Users\\Administrator\\Desktop\\deepseek\\项目\\SHOTGUARD\\_frames\\frame_002.png",
+      "time": "2.16",
+      "index": 2,
+      "identity_drift": true,
+      "clothing_drift": true,
+      "prop_drift": true,
+      "spatial_drift": true,
+      "lighting_drift": false,
+      "state_rollback": false,
+      "action_break": false,
+      "issues": [
+        "身份漂移：参考图角色为17岁少女正面像，当前帧为背影，无法完全确认面部及银色发夹等细节一致性，发夹在当前帧中不可见。",
+        "服装漂移：参考图为米色针织开衫内搭白衬衫，当前帧角色穿着白色上衣，未体现出内搭衬衫领口及开衫的穿着状态。",
+        "道具漂移：参考图场景中右侧有落地窗及窗下灰色布艺沙发，当前帧中沙发位置发生了偏移（出现在左侧前景），且画面中新增了参考图未提及的多盆绿植、墙上相框等道具。",
+        "空间漂移：参考图设定右侧为落地窗，窗下有沙发；当前帧中窗户出现在左右两侧，灰色沙发出现在左侧背景，空间结构及家具布局与参考图左右关系严重不符。"
+      ],
+      "detectedIssues": [
+        "身份漂移",
+        "服装漂移",
+        "道具漂移",
+        "空间漂移"
+      ]
+    },
+    {
+      "frame": "C:\\Users\\Administrator\\Desktop\\deepseek\\项目\\SHOTGUARD\\_frames\\frame_003.png",
+      "time": "2.88",
+      "index": 3,
+      "identity_drift": null,
+      "clothing_drift": null,
+      "prop_drift": null,
+      "spatial_drift": null,
+      "lighting_drift": null,
+      "state_rollback": null,
+      "action_break": null,
+      "issues": [
+        "模型未返回有效内容，无法判断"
+      ],
+      "uncertain": true,
+      "detectedIssues": []
+    },
+    {
+      "frame": "C:\\Users\\Administrator\\Desktop\\deepseek\\项目\\SHOTGUARD\\_frames\\frame_004.png",
+      "time": "3.60",
+      "index": 4,
+      "identity_drift": true,
+      "clothing_drift": true,
+      "prop_drift": true,
+      "spatial_drift": true,
+      "lighting_drift": true,
+      "state_rollback": false,
+      "action_break": false,
+      "issues": [
+        "身份漂移：第二张图中角色右侧的银色发夹消失，且发型由长直发变为微卷。",
+        "服装漂移：第二张图中角色未内搭白衬衫，且开衫颜色由米色变为偏白色。",
+        "道具漂移：第二张图出现了参考图中不存在的多个盆栽。",
+        "空间漂移：参考图设定为右侧单扇落地窗，第二张图呈现为多扇窗户且分布在左右两侧，窗外出现了绿色植物背景，与设定的白色墙面不符。",
+        "光线漂移：参考图为均匀的正面柔和光，第二张图变为强烈的侧面逆光，阴影方向发生改变。"
+      ],
+      "detectedIssues": [
+        "身份漂移",
+        "服装漂移",
+        "道具漂移",
+        "空间漂移",
+        "光线漂移"
+      ]
+    },
+    {
+      "frame": "C:\\Users\\Administrator\\Desktop\\deepseek\\项目\\SHOTGUARD\\_frames\\frame_005.png",
+      "time": "4.32",
+      "index": 5,
+      "identity_drift": null,
+      "clothing_drift": null,
+      "prop_drift": null,
+      "spatial_drift": null,
+      "lighting_drift": null,
+      "state_rollback": null,
+      "action_break": null,
+      "issues": [
+        "模型未返回有效内容，无法判断"
+      ],
+      "uncertain": true,
+      "detectedIssues": []
+    }
+  ],
+  "timestamp": "2026-10-06T02:12:04.497Z"
+}

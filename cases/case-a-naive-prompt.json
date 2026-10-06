@@ -1,0 +1,132 @@
+{
+  "video": "lingjing-476c3382272a451e889fe25d7a946cd5-1.mp4",
+  "reference": "lingjing-5f239b1cc65f4e2c9e3748595d5009f6-1.png",
+  "character": "17岁少女，黑色长直发及肩，右侧银色发夹，米色针织开衫内搭白衬衫",
+  "scene": "木质地板，白色墙面，右侧一扇落地窗，窗下有灰色布艺沙发",
+  "frameCount": 6,
+  "validCount": 1,
+  "failCounts": {
+    "identity_drift": 1,
+    "clothing_drift": 1,
+    "prop_drift": 1,
+    "spatial_drift": 1,
+    "lighting_drift": 1,
+    "state_rollback": 0,
+    "action_break": 0
+  },
+  "pass": false,
+  "frames": [
+    {
+      "frame": "C:\\Users\\Administrator\\Desktop\\deepseek\\项目\\SHOTGUARD\\_frames\\frame_000.png",
+      "time": "0.72",
+      "index": 0,
+      "identity_drift": true,
+      "clothing_drift": true,
+      "prop_drift": true,
+      "spatial_drift": true,
+      "lighting_drift": true,
+      "state_rollback": false,
+      "action_break": false,
+      "issues": [
+        "身份漂移：参考图中的银色发夹在当前帧中缺失，且角度变换后无法确认面部细节是否一致。",
+        "服装漂移：参考图明确设定为米色针织开衫内搭白衬衫，当前帧仅显示一件米白色外套，白色衬衫的内搭领口完全不可见。",
+        "道具漂移：参考图中的右侧银色发夹在当前帧中凭空消失。",
+        "空间漂移：参考图设定场景为木质地板、白色墙面、右侧一扇落地窗、窗下灰色布艺沙发；当前帧场景变为带白色门、多扇窗户和窗帘的走廊或房间，家具布局与参考图完全不符，且右侧出现了参考图中没有的门框和画作。",
+        "光线漂移：参考图光线较均匀平坦，当前帧出现了强烈的方向性侧光，导致门上和地面上形成了明显的斜向阴影，光源方向与参考图不一致。"
+      ],
+      "detectedIssues": [
+        "身份漂移",
+        "服装漂移",
+        "道具漂移",
+        "空间漂移",
+        "光线漂移"
+      ]
+    },
+    {
+      "frame": "C:\\Users\\Administrator\\Desktop\\deepseek\\项目\\SHOTGUARD\\_frames\\frame_001.png",
+      "time": "1.44",
+      "index": 1,
+      "identity_drift": null,
+      "clothing_drift": null,
+      "prop_drift": null,
+      "spatial_drift": null,
+      "lighting_drift": null,
+      "state_rollback": null,
+      "action_break": null,
+      "issues": [
+        "模型未返回有效内容，无法判断"
+      ],
+      "uncertain": true,
+      "detectedIssues": []
+    },
+    {
+      "frame": "C:\\Users\\Administrator\\Desktop\\deepseek\\项目\\SHOTGUARD\\_frames\\frame_002.png",
+      "time": "2.16",
+      "index": 2,
+      "identity_drift": null,
+      "clothing_drift": null,
+      "prop_drift": null,
+      "spatial_drift": null,
+      "lighting_drift": null,
+      "state_rollback": null,
+      "action_break": null,
+      "issues": [
+        "模型未返回有效内容，无法判断"
+      ],
+      "uncertain": true,
+      "detectedIssues": []
+    },
+    {
+      "frame": "C:\\Users\\Administrator\\Desktop\\deepseek\\项目\\SHOTGUARD\\_frames\\frame_003.png",
+      "time": "2.88",
+      "index": 3,
+      "identity_drift": null,
+      "clothing_drift": null,
+      "prop_drift": null,
+      "spatial_drift": null,
+      "lighting_drift": null,
+      "state_rollback": null,
+      "action_break": null,
+      "issues": [
+        "模型未返回有效内容，无法判断"
+      ],
+      "uncertain": true,
+      "detectedIssues": []
+    },
+    {
+      "frame": "C:\\Users\\Administrator\\Desktop\\deepseek\\项目\\SHOTGUARD\\_frames\\frame_004.png",
+      "time": "3.60",
+      "index": 4,
+      "identity_drift": null,
+      "clothing_drift": null,
+      "prop_drift": null,
+      "spatial_drift": null,
+      "lighting_drift": null,
+      "state_rollback": null,
+      "action_break": null,
+      "issues": [
+        "模型未返回有效内容，无法判断"
+      ],
+      "uncertain": true,
+      "detectedIssues": []
+    },
+    {
+      "frame": "C:\\Users\\Administrator\\Desktop\\deepseek\\项目\\SHOTGUARD\\_frames\\frame_005.png",
+      "time": "4.32",
+      "index": 5,
+      "identity_drift": null,
+      "clothing_drift": null,
+      "prop_drift": null,
+      "spatial_drift": null,
+      "lighting_drift": null,
+      "state_rollback": null,
+      "action_break": null,
+      "issues": [
+        "模型未返回有效内容，无法判断"
+      ],
+      "uncertain": true,
+      "detectedIssues": []
+    }
+  ],
+  "timestamp": "2026-10-06T02:10:46.858Z"
+}

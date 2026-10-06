@@ -1,0 +1,128 @@
+{
+  "video": "lingjing-f70119e1177f46b6a81e218661456d16-1.mp4",
+  "reference": "lingjing-5f239b1cc65f4e2c9e3748595d5009f6-1.png",
+  "character": "17岁少女，黑色长直发及肩，右侧银色发夹，米色针织开衫内搭白衬衫",
+  "scene": "木质地板，白色墙面，右侧一扇落地窗，窗下有灰色布艺沙发",
+  "frameCount": 6,
+  "validCount": 3,
+  "failCounts": {
+    "identity_drift": 0,
+    "clothing_drift": 0,
+    "prop_drift": 0,
+    "spatial_drift": 3,
+    "lighting_drift": 1,
+    "state_rollback": 0,
+    "action_break": 0
+  },
+  "pass": false,
+  "frames": [
+    {
+      "frame": "C:\\Users\\Administrator\\Desktop\\deepseek\\项目\\SHOTGUARD\\_frames\\frame_000.png",
+      "time": "0.72",
+      "index": 0,
+      "identity_drift": null,
+      "clothing_drift": null,
+      "prop_drift": null,
+      "spatial_drift": null,
+      "lighting_drift": null,
+      "state_rollback": null,
+      "action_break": null,
+      "issues": [
+        "模型未返回有效内容，无法判断"
+      ],
+      "uncertain": true,
+      "detectedIssues": []
+    },
+    {
+      "frame": "C:\\Users\\Administrator\\Desktop\\deepseek\\项目\\SHOTGUARD\\_frames\\frame_001.png",
+      "time": "1.44",
+      "index": 1,
+      "identity_drift": null,
+      "clothing_drift": null,
+      "prop_drift": null,
+      "spatial_drift": null,
+      "lighting_drift": null,
+      "state_rollback": null,
+      "action_break": null,
+      "issues": [
+        "模型未返回有效内容，无法判断"
+      ],
+      "uncertain": true,
+      "detectedIssues": []
+    },
+    {
+      "frame": "C:\\Users\\Administrator\\Desktop\\deepseek\\项目\\SHOTGUARD\\_frames\\frame_002.png",
+      "time": "2.16",
+      "index": 2,
+      "identity_drift": null,
+      "clothing_drift": null,
+      "prop_drift": null,
+      "spatial_drift": null,
+      "lighting_drift": null,
+      "state_rollback": null,
+      "action_break": null,
+      "issues": [
+        "模型未返回有效内容，无法判断"
+      ],
+      "uncertain": true,
+      "detectedIssues": []
+    },
+    {
+      "frame": "C:\\Users\\Administrator\\Desktop\\deepseek\\项目\\SHOTGUARD\\_frames\\frame_003.png",
+      "time": "2.88",
+      "index": 3,
+      "identity_drift": false,
+      "clothing_drift": false,
+      "prop_drift": false,
+      "spatial_drift": true,
+      "lighting_drift": true,
+      "state_rollback": false,
+      "action_break": false,
+      "issues": [
+        "空间漂移：参考图设定右侧为落地窗、窗下有灰色布艺沙发，检测图中窗户位于左侧，沙发被木质柜子取代，家具布局与参考图不符。",
+        "光线漂移：参考图光源方向与检测图自然光入射方向不一致，阴影关系发生改变。"
+      ],
+      "detectedIssues": [
+        "空间漂移",
+        "光线漂移"
+      ]
+    },
+    {
+      "frame": "C:\\Users\\Administrator\\Desktop\\deepseek\\项目\\SHOTGUARD\\_frames\\frame_004.png",
+      "time": "3.60",
+      "index": 4,
+      "identity_drift": false,
+      "clothing_drift": false,
+      "prop_drift": false,
+      "spatial_drift": true,
+      "lighting_drift": false,
+      "state_rollback": false,
+      "action_break": false,
+      "issues": [
+        "空间漂移：参考图场景设定中的灰色布艺沙发在检测帧中缺失，且窗外出现参考图中未提及的室外建筑与植被。"
+      ],
+      "detectedIssues": [
+        "空间漂移"
+      ]
+    },
+    {
+      "frame": "C:\\Users\\Administrator\\Desktop\\deepseek\\项目\\SHOTGUARD\\_frames\\frame_005.png",
+      "time": "4.32",
+      "index": 5,
+      "identity_drift": false,
+      "clothing_drift": false,
+      "prop_drift": false,
+      "spatial_drift": true,
+      "lighting_drift": false,
+      "state_rollback": null,
+      "action_break": false,
+      "issues": [
+        "场景空间布局与设定不符：参考图设定右侧为落地窗且窗下有灰色布艺沙发，但画面中窗户位于左侧，且右侧出现了参考图中没有的木质置物架，未检测到灰色布艺沙发。"
+      ],
+      "detectedIssues": [
+        "空间漂移"
+      ]
+    }
+  ],
+  "timestamp": "2026-10-06T02:13:50.340Z"
+}
