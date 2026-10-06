@@ -1,5 +1,7 @@
 # SHOTGUARD
 
+**中文** | [English](README.en.md)
+
 > **AI 视频自动验收工具——你给视频，它告诉你哪里崩了。**
 
 所有 AI 视频平台（可灵 / 即梦 / Seedance / Runway / Vidu）都只解决"**怎么生成得更好**"，
@@ -73,6 +75,21 @@ node src/shotguard-verify.js "video.mp4" "character.png" "角色描述" "场景�
 - `verify_report.json` — 结构化数据，供程序消费
 - `verify_report.html` — **可直接交付给甲方的报告**（内嵌逐帧截图，单文件、约 5 MB、无外部依赖）
 
+### 不想自己准备素材？
+
+[`demo/`](demo/) 目录内置**真实测试素材**（同一角色、同一场景、三种提示词写法），无需准备任何东西即可跑通：
+
+```bash
+cd demo
+node ../src/shotguard-verify.js \
+  case-a-naive-prompt.mp4 \
+  reference-character.png \
+  "17岁少女，黑色长直发及肩，右侧银色发夹，米色针织开衫内搭白衬衫，眼下有淡雀斑" \
+  "木质地板，白色墙面，右侧一扇落地窗，窗下有灰色布艺沙发"
+```
+
+三组提示词的完整全文与预期结果见 [`demo/README.md`](demo/README.md)。
+
 ### 方式二：浏览器
 
 直接打开 [`index.html`](index.html)，填表即可。
@@ -136,6 +153,7 @@ node src/shotguard-verify.js "video.mp4" "character.png" "角色描述" "场景�
 ├── index.html                      # 浏览器版（轻量演示）
 ├── src/
 │   └── shotguard-verify.js         # 命令行版（完整功能）
+├── demo/                           # 真实测试素材 + 三组提示词（可一键跑通）
 ├── cases/                          # 三个真实验收案例
 │   ├── case-a-naive-prompt.html
 │   ├── case-b-long-unstructured.html

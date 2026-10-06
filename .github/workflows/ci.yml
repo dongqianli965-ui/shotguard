@@ -49,6 +49,28 @@ jobs:
           done
           echo "全部案例完整"
 
+      - name: 检查 demo 素材完整
+        shell: bash
+        run: |
+          for f in demo/README.md demo/reference-character.png demo/case-a-naive-prompt.mp4 demo/case-b-long-unstructured.mp4 demo/case-c-structured-prompt.mp4; do
+            if [ ! -f "$f" ]; then echo "缺少 demo 素材: $f"; exit 1; fi
+            if [ ! -s "$f" ]; then echo "demo 素材为空: $f"; exit 1; fi
+          done
+          # 校验视频文件头（MP4 的 ftyp box 位于第 5-8 字节）
+          for f in demo/*.mp4; do
+            if ! head -c 12 "$f" | grep -q "ftyp"; then
+              echo "不是合法 MP4: $f"; exit 1
+            fi
+          done
+          echo "demo 素材完整且格式合法"
+
+      - name: 检查双语文档互链
+        shell: bash
+        run: |
+          if ! grep -q "README.en.md" README.md; then echo "中文 README 缺少英文版链接"; exit 1; fi
+          if ! grep -q "README.md" README.en.md; then echo "英文 README 缺少中文版链接"; exit 1; fi
+          echo "双语文档互链正常"
+
       - name: 扫描是否泄漏密钥
         shell: bash
         run: |
